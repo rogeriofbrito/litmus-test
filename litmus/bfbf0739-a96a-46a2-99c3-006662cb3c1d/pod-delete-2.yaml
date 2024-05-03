@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     infra_id: e5562fa9-83fe-44fd-a165-69cd7fdfda75
-    revision_id: 9d5ba15f-04e9-4113-9b99-659b08289272
+    revision_id: 0ff6cbd4-748d-466b-9af3-637fddb9f35b
     workflow_id: 6925ee7b-8be2-473f-96cc-6f0cce4f5152
     workflows.argoproj.io/controller-instanceid: e5562fa9-83fe-44fd-a165-69cd7fdfda75
   name: pod-delete-2
@@ -271,21 +271,6 @@ spec:
                           value: ""
                         - name: SEQUENCE
                           value: parallel
-                      probe:
-                        - name: check-database-integrity
-                          type: cmdProbe
-                          cmdProbe/inputs:
-                            command: echo A
-                            comparator:
-                              type: string
-                              criteria: contains
-                              value: A
-                          mode: Edge
-                          runProperties:
-                            probeTimeout: 5
-                            interval: 5
-                            retry: 1
-                            initialDelaySeconds: 5
     metadata:
       labels:
         weight: "10"
